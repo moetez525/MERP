@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIDDLE EAST RP - أفضل سيرفر FiveM</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Changa:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="website-color.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.6;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 10% 20%, rgba(0, 242, 250, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 90% 80%, rgba(0, 242, 250, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 242, 250, 0.03) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 0;
+            animation: ambientPulse 20s ease-in-out infinite;
+        }
+
+        @keyframes ambientPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 247, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 250, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.3;
+        }
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--primary-orange);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particleFloat 15s infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) scale(1);
+                opacity: 0;
+            }
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(30px) saturate(180%);
+            border-bottom: 1px solid rgb(0, 242, 250);
+            z-index: 1000;
+            padding: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border-bottom-color: rgb(0, 242, 250);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--dark-orange) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: var(--white);
+            box-shadow: 
+                0 10px 30px rgb(0, 242, 250),
+                inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 242, 250, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .logo:hover .logo-icon {
+            transform: translateY(-5px) rotate(-5deg);
+            box-shadow: 
+                0 15px 40px rgb(0, 242, 250),
+                inset 0 -2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-text {
+            font-family: 'Changa', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 45px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            position: relative;
+            padding: 8px 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a i {
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--light-orange));
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a:hover i {
+            transform: scale(1.2);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary-orange);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary-orange);
+            transform: scale(1.1);
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 150px 60px 100px;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .hero-bg-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgb(0, 242, 250), rgba(255, 69, 0, 0.05));
+            filter: blur(60px);
+            animation: shapeFloat 20s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 600px;
+            height: 600px;
+            top: -200px;
+            right: -200px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            left: -100px;
+            animation-delay: 5s;
+        }
+
+        .shape-3 {
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            animation-delay: 10s;
+        }
+
+        @keyframes shapeFloat {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(100px, -100px) scale(1.1);
+            }
+            66% {
+                transform: translate(-100px, 100px) scale(0.9);
+            }
+        }
+
+        .hero-content {
+            max-width: 1600px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 100px;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 242, 250, 0.1);
+            border: 1px solid rgb(0, 242, 250);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-orange);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+        }
+
+        .hero-subtitle i {
+            font-size: 12px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .hero-text h1 {
+            font-family: 'Changa', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--primary-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+            letter-spacing: -2px;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 45px;
+            max-width: 600px;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 45px;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .stat-number {
+            font-family: 'Changa', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary-orange);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
+        }
+
+        .btn {
+            padding: 18px 35px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .btn i {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--dark-orange) 100%);
+            color: var(--white);
+            box-shadow: 
+                0 10px 30px rgb(0, 242, 250),
+                inset 0 -2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 15px 40px rgb(0, 242, 250),
+                inset 0 -2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(0, 174, 255, 0.1);
+            color: var(--white);
+            border: 2px solid rgb(0, 242, 250);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgb(0, 242, 250);
+            border-color: var(--primary-orange);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rotating-border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: var(--primary-orange);
+            border-right-color: var(--primary-orange);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .server-logo {
+            width: 85%;
+            height: auto;
+            filter: drop-shadow(0 30px 80px rgb(0, 242, 250));
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+        .features {
+            padding: 120px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 80px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(20, 20, 20, 0.8));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgb(0, 242, 250);
+            border-radius: 24px;
+            padding: 45px 35px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 20px 60px rgb(0, 242, 250);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--white);
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgb(0, 242, 250);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .feature-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-gray);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 56px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--primary-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .connect-section {
+            padding: 120px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .connect-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(20, 20, 20, 0.9));
+            backdrop-filter: blur(30px);
+            border: 1px solid rgb(0, 242, 250);
+            border-radius: 30px;
+            padding: 80px 60px;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .connect-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgb(0, 242, 250) 0%, transparent 70%);
+            animation: rotateGlow 15s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .connect-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .connect-description {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .connect-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .connect-btn {
+            padding: 22px 50px;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .admins-section {
+            padding: 120px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .admins-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .admins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 80px;
+        }
+
+        .admin-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(20, 20, 20, 0.8));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgb(0, 242, 250);
+            border-radius: 24px;
+            padding: 45px 35px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admin-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgb(0, 242, 250), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .admin-card:hover::before {
+            opacity: 1;
+        }
+
+        .admin-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 25px 70px rgb(0, 242, 250);
+        }
+
+        .admin-image-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 30px;
+        }
+
+        .admin-image-border {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            padding: 3px;
+            animation: rotate 5s linear infinite;
+        }
+
+        .admin-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--card-bg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .admin-card:hover .admin-image {
+            transform: scale(1.05);
+        }
+
+        .admin-rank {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 25px rgb(0, 242, 250);
+            position: relative;
+            z-index: 2;
+        }
+
+        .admin-rank i {
+            font-size: 12px;
+        }
+
+        .admin-name {
+            font-family: 'Changa', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .admin-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-gray);
+            position: relative;
+            z-index: 2;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .store-cta {
+            padding: 120px 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .store-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 30px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgb(0, 242, 250);
+        }
+
+        .store-container::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(255, 255, 255, 0.03) 20px,
+                rgba(255, 255, 255, 0.03) 40px
+            );
+            animation: moveStripes 20s linear infinite;
+        }
+
+        @keyframes moveStripes {
+            from { transform: translate(0, 0); }
+            to { transform: translate(40px, 40px); }
+        }
+
+        .store-icon {
+            width: 90px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--white);
+            margin: 0 auto 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .store-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .store-description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-store {
+            background: var(--white);
+            color: var(--primary-orange);
+            padding: 22px 50px;
+            font-size: 18px;
+            font-weight: 800;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-store:hover {
+            background: var(--off-white);
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        footer {
+            background: var(--dark-bg);
+            border-top: 1px solid rgb(0, 242, 250);
+            padding: 80px 60px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--white);
+        }
+
+        .footer-logo-text {
+            font-family: 'Changa', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-description {
+            color: var(--text-gray);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-orange);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .social-link:hover {
+            background: var(--primary-orange);
+            color: var(--white);
+            transform: translateY(-5px);
+            border-color: var(--primary-orange);
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-title {
+            font-family: 'Changa', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-link i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-orange);
+            transform: translateX(5px);
+        }
+
+        .footer-link:hover i {
+            transform: translateX(3px);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgb(0, 242, 250);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: var(--text-gray);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-bottom a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--light-orange);
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgb(0, 242, 250);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgb(0, 242, 250);
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hero-text h1 {
+                font-size: 58px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 30px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                max-width: 350px;
+                height: calc(100vh - 80px);
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                padding: 40px 30px;
+                gap: 30px;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                border-left: 1px solid rgb(0, 242, 250);
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 30px 80px;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            .hero-stats {
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .features,
+            .connect-section,
+            .admins-section,
+            .store-cta {
+                padding: 80px 30px;
+            }
+
+            .connect-container,
+            .store-container {
+                padding: 50px 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .scroll-top {
+                bottom: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--black);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary-orange), var(--dark-orange));
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--light-orange);
+        }
+
+        ::selection {
+            background: var(--primary-orange);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Container -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <img src="logo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                </div>
+                <span class="logo-text">MIDDLE EAST RP</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="#features"><i class="fas fa-star"></i> المميزات</a></li>
+                <li><a href="#connect"><i class="fas fa-gamepad"></i> الدخول لسيرفر</a></li>
+                <li><a href="#admins"><i class="fas fa-users-cog"></i> الإداريين</a></li>
+                <li><a href="https://store.example.com" target="_blank"><i class="fas fa-shopping-cart"></i> المتجر</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-subtitle">
+                    <i class="fas fa-fire"></i>
+                    <span>أفضل سيرفر FiveM في المنطقة</span>
+                </div>
+                <h1>مرحباً بك في<br>MIDDLE EAST RP</h1>
+                <p>
+                    انضم إلى أكبر مجتمع عربي للعبة FiveM! نقدم لك تجربة لعب فريدة من نوعها مع نظام اقتصادي متطور، وظائف متنوعة، وإدارة محترفة متاحة على مدار الساعة. ابدأ رحلتك الآن وكن جزءاً من مجتمعنا المتنامي!
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">64+</div>
+                        <div class="stat-label">لاعب نشط</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">دعم فني</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">جاهزية السيرفر</div>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#connect" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        انضم الآن
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        اكتشف المزيد
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <div class="rotating-border"></div>
+                    <img src="logo.png" alt="Server Logo" class="server-logo" style="width: 85%; height: auto; border-radius: 20px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features fade-in-section">
+        <div class="features-container">
+            <h2 class="section-title">لماذا MIDDLE EAST RP؟</h2>
+            <p class="section-subtitle">
+                نقدم لك أفضل تجربة لعب مع مميزات حصرية لن تجدها في أي مكان آخر
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">حماية قوية</h3>
+                    <p class="feature-description">
+                        نظام حماية متطور ضد المخترقين والمودرز لضمان تجربة لعب عادلة للجميع
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3 class="feature-title">اقتصاد واقعي</h3>
+                    <p class="feature-description">
+                        نظام اقتصادي متوازن مع وظائف متنوعة وفرص ربح حقيقية داخل السيرفر
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">مجتمع نشط</h3>
+                    <p class="feature-description">
+                        مجتمع عربي كبير ونشط مع فعاليات دورية ومسابقات بجوائز قيمة
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">دعم 24/7</h3>
+                    <p class="feature-description">
+                        فريق دعم فني محترف متاح على مدار الساعة للإجابة على استفساراتك
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="feature-title">أداء عالي</h3>
+                    <p class="feature-description">
+                        خوادم قوية بأحدث التقنيات لضمان تجربة لعب سلسة بدون تقطيع
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="feature-title">مكافآت يومية</h3>
+                    <p class="feature-description">
+                        احصل على مكافآت يومية وهدايا حصرية فقط بتسجيل الدخول للسيرفر
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="connect-section fade-in-section">
+    <div class="connect-container">
+        <h2 class="connect-title">جاهز للانضمام؟</h2>
+        <p class="connect-description">
+            ابدأ مغامرتك الآن في أفضل سيرفر FiveM عربي! انقر على الزر أدناه للانضمام إلى السيرفر أو انضم لمجتمعنا على دسكورد
+        </p>
+        <div class="connect-buttons">
+            <button class="btn btn-primary connect-btn" onclick="connectToServer()">
+                <i class="fas fa-gamepad"></i>
+                Connect FiveM Server
+            </button>
+
+            <button class="btn btn-secondary connect-btn" onclick="joinDiscord()">
+                <i class="fab fa-discord"></i>
+                انضم لدسكورد
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+function joinDiscord() {
+    window.open("https://discord.com/invite/gt0", "_blank");
+}
+</script>
+    <!-- Admins Section -->
+    <section id="admins" class="admins-section fade-in-section">
+        <div class="admins-container">
+            <h2 class="section-title">فريق الإدارة</h2>
+            <p class="section-subtitle">
+                تعرف على فريقنا المحترف الذي يعمل على مدار الساعة لضمان أفضل تجربة لك
+            </p>
+
+            <div class="admins-grid">
+                <!-- Owner -->
+                <div class="admin-card">
+                    <div class="admin-image-wrapper">
+                        <div class="admin-image-border"></div>
+                        <img src="owner.png" alt="Admin" class="admin-image">
+                    </div>
+                    <span class="admin-rank">
+                        <i class="fas fa-crown"></i>
+                        Owner
+                    </span>
+                    <h3 class="admin-name">Al 3bab4i</h3>
+                    <div class="admin-status">
+                        <span class="status-indicator"></span>
+                        متصل الآن
+                    </div>
+                </div>
+                <!-- WEB DEVLOPPER -->
+                <div class="admin-card">
+                    <div class="admin-image-wrapper">
+                        <div class="admin-image-border"></div>
+                        <img src="AA.jpg" alt="Admin" class="admin-image">
+                    </div>
+                    <span class="admin-rank">
+                        <i class="fas fa-user-shield"></i>
+                        WEB DEVLOPPER
+                    </span>
+                    <h3 class="admin-name">ᵀˢˢ 𝐦 𝐨 𝐧 𝐬 𝐭 𝐞 𝐫</h3>
+                    <div class="admin-status">
+                        <span class="status-indicator"></span>
+                        متصل الآن
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store CTA Section -->
+    <section class="store-cta fade-in-section">
+        <div class="store-container">
+            <div class="store-icon">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h2 class="store-title">زُر متجرنا الإلكتروني(SOON)</h2>
+            <p class="store-description">
+                اكتشف عروضنا الحصرية! احصل على باقات VIP، سيارات فاخرة، وأسلحة قوية من متجرنا الإلكتروني بأسعار تنافسية
+            </p>
+            <a href="https://store.example.com" target="_blank" class="btn btn-store">
+                <i class="fas fa-shopping-cart"></i>
+               (SOON) تصفح المتجر الآن
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <img src="logo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                    </div>
+                    <span class="footer-logo-text">MIDDLE EAST RP</span>
+                </div>
+                <p class="footer-description">
+                    أفضل سيرفر FiveM عربي يقدم لك تجربة لعب فريدة ومميزة مع مجتمع نشط وإدارة محترفة
+                </p>
+                <div class="footer-social">
+                    <a href="https://discord.com/invite/mdel" class="social-link" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">روابط سريعة</h4>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        الرئيسية
+                    </a>
+                    <a href="#features" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        المميزات
+                    </a>
+                    <a href="#connect" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        الدخول للسيرفر
+                    </a>
+                    <a href="#admins" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        الإداريين
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">الدعم</h4>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        مركز المساعدة
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        الأسئلة الشائعة
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        القوانين
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        تواصل معنا
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title">معلومات</h4>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        من نحن
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        سياسة الخصوصية
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        شروط الاستخدام
+                    </a>
+                    <a href="#" class="footer-link">
+                        <i class="fas fa-angle-left"></i>
+                        المتجر
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 <strong>MIDDLE EAST RP</strong> - جميع الحقوق محفوظة
+            </p>
+            <p style="margin-top: 10px;">
+                صُمم بكل حب <i class="fas fa-heart" style="color: var(--primary-orange);"></i> لأفضل مجتمع ألعاب عربي
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Particle System
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 60;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size
+                const size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.bottom = '-10px';
+                
+                // Random animation duration and delay
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active Navigation Link
+        const sections = document.querySelectorAll('section[id]');
+        const navLinksAll = document.querySelectorAll('.nav-links a[href^="#"]');
+
+        function updateActiveLink() {
+            const scrollPosition = window.pageYOffset + 200;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinksAll.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+
+        // Scroll Animations
+        const fadeInElements = document.querySelectorAll('.fade-in-section');
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeInElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Connect to Server Function
+        function connectToServer() {
+            // استبدل بـ IP السيرفر الخاص بك
+            const serverIP = 'YOUR_SERVER_IP:30120';
+            window.location.href = `fivem://connect/z5z9by`;
+            
+            // Alternative: Show alert with IP
+            // alert(`IP السيرفر: ${serverIP}\n\nانسخ الـ IP والصقه في FiveM`);
+        }
+
+        // Join Discord Function
+        function joinDiscord() {
+            // استبدل برابط دسكورد الخاص بك
+            const discordLink = 'https://discord.com/invite/mdel';
+            window.open(discordLink, '_blank');
+            
+            // Alternative: Show alert
+            // alert(`رابط دسكورد: ${discordLink}`);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            updateActiveLink();
+        });
+
+        // Parallax Effect
+        document.addEventListener('mousemove', (e) => {
+            const shapes = document.querySelectorAll('.shape');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 30;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                shape.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+
+    
+    </script>
+</body>
+</html>
